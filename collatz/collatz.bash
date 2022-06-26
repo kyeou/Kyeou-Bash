@@ -1,15 +1,12 @@
 #!/bin/bash
 
-echo -n > results.txt
 
-for i in {1..10000}
+echo -n > results.txt
+top=$1
+for i in $( seq 1 $top )
 do
   num=$i
-  #if [[ $((num % 2)) -eq 0 ]]; then
-  #echo "$num"
-  #fi
   echo -n "$num: " >> results.txt
-  echo "$num"
   while [ $num -ne 1 ];
   do
     if [[ $((num % 2)) -eq 0 ]]; then
